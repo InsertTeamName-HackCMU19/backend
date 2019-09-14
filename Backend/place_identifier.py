@@ -31,7 +31,7 @@ def getGhcPoint(inp,Building,spaceIdx):
             floor = i
     assert(floor != -1)
     secondDigit = int(inp[spaceIdx+2:spaceIdx+3])
-    print(secondDigit)
+    # print(secondDigit)
     # floor 4
     if floor == 4:
         if secondDigit == 4:
@@ -73,6 +73,6 @@ def getArea(inputStart, inputEnd):
     return Out_S_and_E[0],Out_S_and_E[1]
 
 
-print(getArea('GHC 5730','WEH 6330'))
-print(getArea('WEH 7400','GHC 4300'))
-print(getArea('WEH 7400','GHC 5700'))
+# print(getArea('GHC 5730','WEH 6330'))
+# print(getArea('WEH 7400','GHC 4300'))
+# print(getArea('WEH 7400','GHC 5700'))

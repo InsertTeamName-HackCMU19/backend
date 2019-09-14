@@ -59,11 +59,6 @@ GHC_5_STD = point("GHC_5_STD",-8899408.669352691,4930555.41732452, 'GHC', 5)
 GHC_5_STM = point("GHC_5_STM",-8899368.096992231,4930626.365480926,'GHC', 5)
 GHC_5_STU = point("GHC_5_STU",-8899371.16534935,4930665.010270287, 'GHC', 5)
 
-points = [WEH_5_NW, WEH_5_NE, WEH_5_SW, WEH_5_SE, WEH_5_ST, 
-            WEH_6_NW, WEH_6_NE, WEH_6_SW, WEH_6_SE, WEH_6_ST,
-            WEH_7_NW, WEH_7_NE, WEH_7_SW, WEH_7_SE, WEH_7_ST,
-            WEH_8_NW, WEH_8_NE, WEH_8_SW, WEH_8_SE, WEH_8_ST]
-
 cmap = {
         WEH_4_BR:[WEH_4_ST, NSH_4_WBR],
         WEH_4_ST:[WEH_5_ST],
@@ -112,6 +107,8 @@ cmap = {
         GHC_5_SE:[GHC_5_STM, GHC_5_SW, GHC_5_STM, GHC_5_OBR],
         GHC_5_STD:[GHC_5_SW, GHC_5_SE, GHC_4_STD, GHC_5_OBR]
 }
+
+points = list(cmap.keys())
 
 def getData():
     return points, cmap
