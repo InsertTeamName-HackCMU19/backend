@@ -19,6 +19,10 @@ def findPath(S, E):
     return dij(cmap, startPoint, endPoint)
 
 def dij(graph, start, end):
+    # if user start and end at the same place:
+    if start == end:
+        return [start]
+    
     shortest_dis = {}
     predecessor = {}
     unseenNodes = graph
@@ -51,7 +55,6 @@ def dij(graph, start, end):
             currentNode = predecessor[currentNode]
         except KeyError:
             return 'This path is unreachable'
-            break
     path.insert(0, start)
     s_path = []
     for po in path:
