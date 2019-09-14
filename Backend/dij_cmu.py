@@ -1,6 +1,7 @@
 import math
 from dataset import getData
 from place_identifier import *
+import copy
 
 def findPath(S, E):
     points, cmap = getData()
@@ -14,7 +15,7 @@ def findPath(S, E):
         else:
             pass
 
-    print(startPoint, endPoint)
+    # print(startPoint, endPoint)
 
     return dij(cmap, startPoint, endPoint)
 
@@ -25,7 +26,7 @@ def dij(graph, start, end):
     
     shortest_dis = {}
     predecessor = {}
-    unseenNodes = graph
+    unseenNodes = copy.copy(graph)
     infinity = 9999999
     path = []
 
@@ -45,7 +46,7 @@ def dij(graph, start, end):
         for adj in graph[minNode]:
             weight = math.sqrt((minNode.cor[0]-adj.cor[0])**2 + (minNode.cor[1]-adj.cor[1])**2)
             if weight + shortest_dis[minNode] < shortest_dis[adj]:
-                print(shortest_dis[minNode])
+                # print(shortest_dis[minNode])
                 shortest_dis[adj] = weight + shortest_dis[minNode]
                 predecessor[adj] = minNode
         unseenNodes.pop(minNode)
@@ -56,7 +57,7 @@ def dij(graph, start, end):
             path.insert(0, currentNode)
             currentNode = predecessor[currentNode]
         except KeyError:
-            return 'This path is unreachable'
+            return 'This pa th is unreachable'
     path.insert(0, start)
     s_path = []
     for po in path:
