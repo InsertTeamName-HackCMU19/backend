@@ -40,10 +40,12 @@ def dij(graph, start, end):
                 minNode = node
             elif shortest_dis[node] < shortest_dis[minNode]:
                 minNode = node
+        
         weight = 0
         for adj in graph[minNode]:
             weight = math.sqrt((minNode.cor[0]-adj.cor[0])**2 + (minNode.cor[1]-adj.cor[1])**2)
             if weight + shortest_dis[minNode] < shortest_dis[adj]:
+                print(shortest_dis[minNode])
                 shortest_dis[adj] = weight + shortest_dis[minNode]
                 predecessor[adj] = minNode
         unseenNodes.pop(minNode)

@@ -105,7 +105,8 @@ cmap = {
         GHC_5_STM:[GHC_5_NE, GHC_5_SE, GHC_4_STM],
         GHC_5_SW:[GHC_5_SE, GHC_5_STD],
         GHC_5_SE:[GHC_5_STM, GHC_5_SW, GHC_5_STM, GHC_5_OBR],
-        GHC_5_STD:[GHC_5_SW, GHC_5_SE, GHC_4_STD, GHC_5_OBR]
+        GHC_5_STD:[GHC_5_SW, GHC_5_SE, GHC_4_STD, GHC_5_OBR],
+        GHC_5_OBR: [GHC_5_STD, GHC_5_SE]
 }
 
 points = list(cmap.keys())
