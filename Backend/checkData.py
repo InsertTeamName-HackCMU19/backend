@@ -1,4 +1,5 @@
 import copy
+
 class point:
     def __init__ (self,name,x,y,building,floor):
         self.name=name
@@ -110,15 +111,32 @@ cmap = {
         GHC_5_OBR: [GHC_5_STD, GHC_5_SE]
 }
 
-map_correct = copy.copy(cmap)
-for node in map_correct:
-    for po in map_correct[node]:
-        if node in map_correct[po]:
+
+mm = copy.copy(cmap)
+e = 0
+
+for node in mm:
+    for po in mm[node]:
+        if node in mm[po]:
             pass
         else:
-            map_correct[po].append(node)
+            mm[po].append(node)
+            e += 1
+            print(node.name, po.name)
+            print('error')
 
-points = list(map_correct.keys())
+print(mm)
+e = 0
+for node in mm:
+    for po in mm[node]:
+        if node in mm[po]:
+            pass
+        else:
+            mm[po].append(node)
+            e += 1
+            print(node.name, po.name)
+            print('error')
 
-def getData():
-    return points, map_correct
+print(e)
+# for node in cmap:
+#     print(node)

@@ -18,5 +18,5 @@
 # print(s[0:s.index(' ')])
 
 from dij_cmu import *
-path = findPath('GHC 5730','WEH 6330')
+path = findPath('WEH 6330', 'GHC 5730')
 print(path)
