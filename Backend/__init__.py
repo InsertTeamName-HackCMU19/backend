@@ -15,7 +15,6 @@ def test():
     start = data['start']
     end = data['end']
     path = findPath(start, end)
-    print(path)
     return json.dumps(path)
 
 app.run(host='0.0.0.0')

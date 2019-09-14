@@ -50,10 +50,10 @@ def dij(graph, start, end):
             path.insert(0, currentNode)
             currentNode = predecessor[currentNode]
         except KeyError:
-            print('This path is unreachable')
+            return 'This path is unreachable'
+            break
     path.insert(0, start)
     s_path = []
     for po in path:
         s_path.append(po.serialize())
-
     return (s_path)
